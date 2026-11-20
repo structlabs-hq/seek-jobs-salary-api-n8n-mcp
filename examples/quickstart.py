@@ -5,16 +5,16 @@ TOKEN = os.environ.get("APIFY_TOKEN")
 if not TOKEN:
     raise SystemExit("Set APIFY_TOKEN first")
 
-payload = {
-    "queries": [
-        "registered nurse"
-    ],
-    "country": "AU",
-    "pageStart": 1,
-    "pageEnd": 2,
-    "maxJobs": 40,
-    "onlyNewJobs": false
-}
+payload = json.loads(r'''{
+  "queries": [
+    "registered nurse"
+  ],
+  "country": "AU",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "maxJobs": 40,
+  "onlyNewJobs": false
+}''')
 
 req = urllib.request.Request(
     "https://api.apify.com/v2/acts/structlabs~seek-jobs-salary-api/run-sync-get-dataset-items",
