@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "apify-seek-jobs-salary-api": {
+      "url": "https://mcp.apify.com/?actors=structlabs/seek-jobs-salary-api"
+    }
+  }
+}
